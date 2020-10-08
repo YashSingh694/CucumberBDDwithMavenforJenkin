@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 import pageObjects.AddcustomerPage;
+import pageObjects.EditandDeletePage;
 import pageObjects.LoginPage;
 import pageObjects.SearchCustomerPage;
 
@@ -16,6 +17,7 @@ public class BaseClass {
 	public LoginPage lp;
 	public AddcustomerPage addCust;
 	public SearchCustomerPage searchCust;
+	public EditandDeletePage editanddelete;
 	public static Logger logger;
 	public Properties configProp;
 	
@@ -23,8 +25,8 @@ public class BaseClass {
 	public static String randomestring(){
 		String generatedString1 = RandomStringUtils.randomAlphabetic(5);
 		return (generatedString1);
-	}
 	
+	}
 	
 	
 }

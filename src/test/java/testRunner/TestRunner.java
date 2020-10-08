@@ -10,8 +10,9 @@ import cucumber.api.junit.Cucumber;
 		features=".//Features//",
 		glue="stepDefinitions",
 		monochrome=true,
-		tags= {"@sanity"},
+		tags= {"@Testing"},
 		plugin= {"pretty","html:test-output"}
+		//dryRun = true
 		)
 public class TestRunner {
 

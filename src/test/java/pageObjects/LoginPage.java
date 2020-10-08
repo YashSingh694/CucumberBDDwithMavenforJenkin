@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
@@ -15,7 +16,7 @@ public class LoginPage {
 		PageFactory.initElements(rdriver, this);
 	}
 	
-	@FindBy(id = "Email")
+	@FindBy(how = How.ID, using = "Email")
 	@CacheLookup
 	WebElement txtEmail;
 
@@ -24,10 +25,15 @@ public class LoginPage {
 	WebElement txtPassword;
 
 	@FindBy(xpath = "//input[@value='Log in']")
+	//@FindBy(xpath = "//input[@type='submit']")
 	@CacheLookup
 	WebElement btnLogin;
 
-	@FindBy(linkText = "Logout")
+	/* All xpath related to Logout */
+	//@FindBy(linkText = "Logout")
+	//@FindBy(xpath = "//a[text()='Logout']")
+	//@FindBy(xpath = "//a[contains(@href,'/logout')]")
+	@FindBy(xpath = "//a[starts-with(@href,'/logout')]")
 	@CacheLookup
 	WebElement lnkLogout;
 	
