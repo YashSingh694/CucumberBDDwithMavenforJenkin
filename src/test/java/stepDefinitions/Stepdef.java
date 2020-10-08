@@ -9,13 +9,15 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import cucumber.api.java.Before;
-import cucumber.api.java.en.*;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
 import junit.framework.Assert;
 import pageObjects.AddcustomerPage;
@@ -46,7 +48,9 @@ public class Stepdef extends BaseClass {
 
 		else if (br.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", configProp.getProperty("chromepath"));
-			driver = new ChromeDriver();
+			ChromeOptions ChromeOptions = new ChromeOptions();
+			ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+			driver = new ChromeDriver(ChromeOptions);
 		}
 
 		else if (br.equals("ie")) {
