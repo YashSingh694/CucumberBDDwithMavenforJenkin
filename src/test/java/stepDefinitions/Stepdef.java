@@ -49,7 +49,8 @@ public class Stepdef extends BaseClass {
 		else if (br.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", configProp.getProperty("chromepath"));
 			ChromeOptions ChromeOptions = new ChromeOptions();
-			ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+			//ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox"); /* This is for Jenkins only */
+			ChromeOptions.addArguments("window-size=1024,768", "--no-sandbox");
 			driver = new ChromeDriver(ChromeOptions);
 		}
 
